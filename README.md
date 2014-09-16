@@ -1,17 +1,17 @@
 GettingandCleaningDataCourseProject
 ===================================
-The run_analysis.R file can be used to create two tidy datasets:
+The run_analysis.R file can be used to create two tidy datasets from a number of data files. We assume these data files are in the working directory (the same directory where run_analysis.R is) and that the working directory is the UCI HAR Dataset folder.
 
 1. The first dataset is created by sourcing the file and running the first function. This can be done by running
 
-	source("run_analysis.R");
+	source("run_analysis.R")
 	firstdataset <- firstTidyDataSet()
 	
-This dataset contains 10299 rows and 68 columns. 
+This dataset contains 10299 rows and 68 columns, i.e. 33 means, 33 std, a subject column and an activity column.
 
-2. The second data set contains the means of 66 variables by subject and activity and it is created by running
+2. The second data set contains the means of the 33 means and the 33 std by subject and activity and it is created by running
 
-	source("run_analysis.R");
+	source("run_analysis.R")
 	tidyDataset <- secondTidyDataSet()
 	
 This dataset contains 180 rows and 66 columns.
