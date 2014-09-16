@@ -4,15 +4,18 @@ The run_analysis.R file can be used to create two tidy datasets from a number of
 
 1. The first dataset is created by sourcing the file and running the first function. This can be done by running
 
-    ```source("run_analysis.R")
+    ```
+    source("run_analysis.R")
     firstdataset <- firstTidyDataSet()
     ```	
 This dataset contains 10299 rows and 68 columns, i.e. 33 means, 33 stds, a subject column and an activity column.
 
 2. The second data set contains the means of the 33 means and the 33 stds by subject and activity and it is created by running
 
-   ```source("run_analysis.R")
-    tidyDataSet <- secondTidyDataSet()```
+   ```
+    source("run_analysis.R")
+    tidyDataSet <- secondTidyDataSet()
+    ```
 	
 This dataset contains 180 rows and 66 columns.
 	
