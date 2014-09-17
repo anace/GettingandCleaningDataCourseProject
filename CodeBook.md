@@ -58,8 +58,8 @@ In the final dataset we have a row for the combination of each subject and each 
 
 original variable number|new variable number|name|original variable number|new variable number|name
 ----|----|----|----|----|----
-1|1| tBodyAcc-mean()-X|4|34| tBodyAcc-std()-X
-2|2| tBodyAcc-mean()-Y|5|35| tBodyAcc-std()-Y
+1|1| ```tBodyAcc-mean()-X```|4|34| ```tBodyAcc-std()-X```
+2|2| ```tBodyAcc-mean()-Y```|5|35| ```tBodyAcc-std()-Y```
 3|3| tBodyAcc-mean()-Z|6|36|tBodyAcc-std()-Z
 41|4| tGravityAcc-mean()-X|44|37| tGravityAcc-std()-X
 42|5| tGravityAcc-mean()-Y|45|38| tGravityAcc-std()-Y
