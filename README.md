@@ -1,8 +1,8 @@
 Getting and Cleaning Data Course Project
 ========================================
-In this project we create two tidy datasets from a number of data files. We assume these data files are in the working directory and that the working directory is the UCI HAR Dataset folder. The run_analysis.R file is also in the same directory. 
+In this project we create two tidy datasets from a number of data files. We assume these data files are in the working directory and that the working directory is the UCI HAR Dataset folder. The ```run_analysis.R``` file is also in the same directory. 
 
-1. The first dataset is created by sourcing the file and running the first function like in the following code
+1. The first dataset is created by sourcing the file and running the ```firstTidyDataSet()``` function like in the following code
 
     ```
     source("run_analysis.R")
@@ -23,4 +23,4 @@ The secondTidyDataSet() function also creates a text file with the data called "
 	
 	newdataset<-read.table("aTidyDataSet.txt", colClasses="character", header=TRUE)
 	
-More information is available in the CodeBook and in the comments of run_analysis.R
+More information is available in the CodeBook and in the comments of ```run_analysis.R```

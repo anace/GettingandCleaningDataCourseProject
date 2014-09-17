@@ -49,14 +49,14 @@ The code for this part is also in the file ```run_analysis.R``` and the function
 After getting our data using the ```firstTidyDataSet()``` function we have to get the average of each variable for each activity and each subject, put the data together in a tidy dataset and export the results to a text file. This is done in the following steps:
 * We use the ```split()``` function on two levels to separate by subject and activity. As we had 30 subjects and 6 activities we obtain 180 groups.
 * We calculate the averages using the ```sapply()``` loop function with a ```colMeans()``` function inside.
-* The results are not in the format we want (we get a matrix with 66 rows and 180 columns), therefore we transform them transposing the matrix with the ```t()``` function and converting it with ```data.frame()```.
+* The results are not in the format we want (we get a matrix with 66 rows and 180 columns and we would like to have a dataframe with 180 rows and 66 columns), therefore we transform them transposing the matrix with the ```t()``` function and converting it with ```data.frame()```.
 * We export the data to a text file with the ```write.table()``` function.
 
 In the final dataset we have a row for each unique combination of a subject and an activity. In the columns we have the averages for the following variables:
 
 (We show the number of the variable in the original dataset and in the new dataset).
 
-original variable number|new variable number|name|original variable number|new variable number|name
+original variable number|new variable number|variable name|original variable number|new variable number|variable name
 :----:|:----:|:----:|:----:|:----:|:----:
 1|1| ```tBodyAcc-mean()-X```|4|34| ```tBodyAcc-std()-X```
 2|2| ```tBodyAcc-mean()-Y```|5|35| ```tBodyAcc-std()-Y```
