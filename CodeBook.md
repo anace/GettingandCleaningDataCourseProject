@@ -55,7 +55,7 @@ After getting our data using the ```firstTidyDataSet()``` function we have to ge
 In the final dataset we have a row for the combination of each subject and each activity with the averages for the following variables in each column:
 
 (The number of the variable is the same as in the original dataset)
-```
+
 original variable number|new variable number|name|original variable number|new variable number|name
 ----|----|----|----|----|----
 1|1| tBodyAcc-mean()-X|4|34| tBodyAcc-std()-X
@@ -91,6 +91,6 @@ original variable number|new variable number|name|original variable number|new v
 516|31| fBodyBodyAccJerkMag-mean()|517|64| fBodyBodyAccJerkMag-std()
 529|32| fBodyBodyGyroMag-mean()|530|65| fBodyBodyGyroMag-std()
 542|33| fBodyBodyGyroJerkMag-mean()|543|66| fBodyBodyGyroJerkMag-std()
-```
+
 
 
