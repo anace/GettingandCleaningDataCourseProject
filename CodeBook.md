@@ -52,45 +52,45 @@ After getting our data using the ```firstTidyDataSet()``` function we have to ge
 * The results are not in the format we want (we get a matrix with 66 rows and 180 columns), therefore we transform them transposing the matrix with the ```t()``` function and converting it with ```data.frame()```.
 * We export the data to a text file with the ```write.table()``` function.
 
-In the final dataset we have a row for the combination of each subject and each activity with the averages for the following variables in each column:
+In the final dataset we have a row for each unique combination of a subject and an activity. In the columns we have the averages for the following variables:
 
-(The number of the variable is the same as in the original dataset)
+(We show the number of the variable in the original dataset and in the new dataset).
 
 original variable number|new variable number|name|original variable number|new variable number|name
 :----:|:----:|:----:|:----:|:----:|:----:
 1|1| ```tBodyAcc-mean()-X```|4|34| ```tBodyAcc-std()-X```
 2|2| ```tBodyAcc-mean()-Y```|5|35| ```tBodyAcc-std()-Y```
-3|3| tBodyAcc-mean()-Z|6|36|tBodyAcc-std()-Z
-41|4| tGravityAcc-mean()-X|44|37| tGravityAcc-std()-X
-42|5| tGravityAcc-mean()-Y|45|38| tGravityAcc-std()-Y
-43|6| tGravityAcc-mean()-Z|46|39| tGravityAcc-std()-Z
-81|7| tBodyAccJerk-mean()-X|84|40| tBodyAccJerk-std()-X
-82|8| tBodyAccJerk-mean()-Y|85|41| tBodyAccJerk-std()-Y
-83|9| tBodyAccJerk-mean()-Z|86|42| tBodyAccJerk-std()-Z
-121|10| tBodyGyro-mean()-X|124|43| tBodyGyro-std()-X
-122|11| tBodyGyro-mean()-Y|125|44| tBodyGyro-std()-Y
-123|12| tBodyGyro-mean()-Z|126|45| tBodyGyro-std()-Z
-161|13| tBodyGyroJerk-mean()-X|164|46| tBodyGyroJerk-std()-X
-162|14| tBodyGyroJerk-mean()-Y|165|47| tBodyGyroJerk-std()-Y
-163|15| tBodyGyroJerk-mean()-Z|166|48| tBodyGyroJerk-std()-Z
-201|16| tBodyAccMag-mean()|202|49| tBodyAccMag-std()
-214|17|tGravityAccMag-mean()|215|50| tGravityAccMag-std()
-227|18| tBodyAccJerkMag-mean()|228|51| tBodyAccJerkMag-std()
-240|19| tBodyGyroMag-mean()|241|52| tBodyGyroMag-std()
-253|20| tBodyGyroJerkMag-mean()|254|53| tBodyGyroJerkMag-std()
-266|21| fBodyAcc-mean()-X|269|54| fBodyAcc-std()-X
-267|22| fBodyAcc-mean()-Y|270|55| fBodyAcc-std()-Y
-268|23| fBodyAcc-mean()-Z|271|56| fBodyAcc-std()-Z
-345|24| fBodyAccJerk-mean()-X|348|57| fBodyAccJerk-std()-X
-346|25| fBodyAccJerk-mean()-Y|349|58| fBodyAccJerk-std()-Y
-347|26| fBodyAccJerk-mean()-Z|350|59| fBodyAccJerk-std()-Z
-424|27| fBodyGyro-mean()-X|427|60| fBodyGyro-std()-X
-425|28| fBodyGyro-mean()-Y|428|61| fBodyGyro-std()-Y
-426|29| fBodyGyro-mean()-Z|429|62| fBodyGyro-std()-Z
-503|30| fBodyAccMag-mean()|504|63| fBodyAccMag-std()
-516|31| fBodyBodyAccJerkMag-mean()|517|64| fBodyBodyAccJerkMag-std()
-529|32| fBodyBodyGyroMag-mean()|530|65| fBodyBodyGyroMag-std()
-542|33| fBodyBodyGyroJerkMag-mean()|543|66| fBodyBodyGyroJerkMag-std()
+3|3| ```tBodyAcc-mean()-Z```|6|36|```tBodyAcc-std()-Z```
+41|4| ```tGravityAcc-mean()-X```|44|37| ```tGravityAcc-std()-X```
+42|5| ```tGravityAcc-mean()-Y```|45|38| ```tGravityAcc-std()-Y```
+43|6| ```tGravityAcc-mean()-Z```|46|39| ```tGravityAcc-std()-Z```
+81|7| ```tBodyAccJerk-mean()-X```|84|40| ```tBodyAccJerk-std()-X```
+82|8| ```tBodyAccJerk-mean()-Y|85```|41| ```tBodyAccJerk-std()-Y```
+83|9| ```tBodyAccJerk-mean()-Z|86```|42| ```tBodyAccJerk-std()-Z```
+121|10| ```tBodyGyro-mean()-X|124```|43| ```tBodyGyro-std()-X```
+122|11| ```tBodyGyro-mean()-Y|125```|44| ```tBodyGyro-std()-Y```
+123|12| ```tBodyGyro-mean()-Z|126```|45| ```tBodyGyro-std()-Z```
+161|13| ```tBodyGyroJerk-mean()-X```|164|46| ```tBodyGyroJerk-std()-X```
+162|14| ```tBodyGyroJerk-mean()-Y```|165|47| ```tBodyGyroJerk-std()-Y```
+163|15| ```tBodyGyroJerk-mean()-Z```|166|48| ```tBodyGyroJerk-std()-Z```
+201|16| ```tBodyAccMag-mean()```|202|49| ```tBodyAccMag-std()```
+214|17| ```tGravityAccMag-mean()```|215|50| ```tGravityAccMag-std()```
+227|18| ```tBodyAccJerkMag-mean()```|228|51| ```tBodyAccJerkMag-std()```
+240|19| ```tBodyGyroMag-mean()```|241|52| ```tBodyGyroMag-std()```
+253|20| ```tBodyGyroJerkMag-mean()```|254|53| ```tBodyGyroJerkMag-std()```
+266|21| ```fBodyAcc-mean()-X```|269|54| ```fBodyAcc-std()-X```
+267|22| ```fBodyAcc-mean()-Y```|270|55| ```fBodyAcc-std()-Y```
+268|23| ```fBodyAcc-mean()-Z```|271|56| ```fBodyAcc-std()-Z```
+345|24| ```fBodyAccJerk-mean()-X```|348|57| ```fBodyAccJerk-std()-X```
+346|25| ```fBodyAccJerk-mean()-Y```|349|58| ```fBodyAccJerk-std()-Y```
+347|26| ```fBodyAccJerk-mean()-Z```|350|59| ```fBodyAccJerk-std()-Z```
+424|27| ```fBodyGyro-mean()-X```|427|60| ```fBodyGyro-std()-X```
+425|28| ```fBodyGyro-mean()-Y```|428|61| ```fBodyGyro-std()-Y```
+426|29| ```fBodyGyro-mean()-Z```|429|62| ```fBodyGyro-std()-Z```
+503|30| ```fBodyAccMag-mean()```|504|63| ```fBodyAccMag-std()```
+516|31| ```fBodyBodyAccJerkMag-mean()```|517|64| ```fBodyBodyAccJerkMag-std()```
+529|32| ```fBodyBodyGyroMag-mean()```|530|65| ```fBodyBodyGyroMag-std()```
+542|33| ```fBodyBodyGyroJerkMag-mean()```|543|66| ```fBodyBodyGyroJerkMag-std()```
 
 
 
