@@ -38,11 +38,11 @@ Besides, the database has 1 file with the 6 performed activities' names, ```acti
 The analysis will be performed in R. The code is in the file ```run_analysis.R``` and the function's name is ```firstTidyDataSet()```. There are a lot of explanatory comments in the ```run_analysis.R``` file that complement this CodeBook.
 
 After reading all the files with ```read.table()```, we merge the two "X" datasets using the ```rbind()``` function and obtain a dataset with 561 variables and 10299 observations. We also merge the two "subject" datasets obtaining a dataset with one column and 10299 rows and the two "y" datasets with the same result.
-For the moment, we keep them separated, as we need to name the variables, select only a subset of them and replace the activity codes with the activity names, and that will be done easier this way.
+For the moment, we keep them separated, as we need to name the variables, select only a subset of them and replace the activity codes with the activity names. Working with 3 distinct datasets will permit us not only simplify the code, but also keep all the rows in the same order we found them.
 * For naming the variables, we use the names we found in features.txt and the ```names()``` function.
 * Following the assignment, we have to select only the variables with the mean and standard deviation values. There are 66 variables that satisfy this condition.
-This is done using the dplyr package and the ```select()``` function with ```contains()```.
-* The replacement of the activity codes by the activity names is done using the ```mutate()``` function of the dplyr package and the ```factor()``` function.
+We select them using the dplyr package and the ```select()``` function with ```contains()```.
+* The replacement of the activity codes by the activity names is done using the ```factor()``` function and the ```mutate()``` function from the dplyr package.
 * Finally, we put the subject dataset, the y dataset and the X dataset together using ```data.frame()```. We obtain a dataset with 68 columns: a column containing the subjects' identification number, a column containing the activity names, 33 columns with mean values and 33 columns with standard deviation values, that is, a dataset with 68 variables and 10299 observations.
 
 ### The second and final tidy dataset
@@ -63,39 +63,39 @@ In the final dataset we have a row for each unique combination of a subject and 
 original variable number|new variable number|variable name|original variable number|new variable number|variable name
 :----:|:----:|:----:|:----:|:----:|:----:
 -|1| ```subject_id```|-|2| ```activity```
-1|3| ```tBodyAcc-mean()-X```|4|36| ```tBodyAcc-std()-X```
-2|4| ```tBodyAcc-mean()-Y```|5|37| ```tBodyAcc-std()-Y```
-3|5| ```tBodyAcc-mean()-Z```|6|38|```tBodyAcc-std()-Z```
-41|6| ```tGravityAcc-mean()-X```|44|39| ```tGravityAcc-std()-X```
-42|7| ```tGravityAcc-mean()-Y```|45|40| ```tGravityAcc-std()-Y```
-43|8| ```tGravityAcc-mean()-Z```|46|41| ```tGravityAcc-std()-Z```
-81|9| ```tBodyAccJerk-mean()-X```|84|42| ```tBodyAccJerk-std()-X```
-82|10| ```tBodyAccJerk-mean()-Y```|85|43| ```tBodyAccJerk-std()-Y```
-83|11| ```tBodyAccJerk-mean()-Z```|86|44| ```tBodyAccJerk-std()-Z```
-121|12| ```tBodyGyro-mean()-X```|124|45| ```tBodyGyro-std()-X```
-122|13| ```tBodyGyro-mean()-Y```|125|46| ```tBodyGyro-std()-Y```
-123|14| ```tBodyGyro-mean()-Z```|126|47| ```tBodyGyro-std()-Z```
-161|15| ```tBodyGyroJerk-mean()-X```|164|48| ```tBodyGyroJerk-std()-X```
-162|16| ```tBodyGyroJerk-mean()-Y```|165|49| ```tBodyGyroJerk-std()-Y```
-163|17| ```tBodyGyroJerk-mean()-Z```|166|50| ```tBodyGyroJerk-std()-Z```
-201|18| ```tBodyAccMag-mean()```|202|51| ```tBodyAccMag-std()```
-214|19| ```tGravityAccMag-mean()```|215|52| ```tGravityAccMag-std()```
-227|20| ```tBodyAccJerkMag-mean()```|228|53| ```tBodyAccJerkMag-std()```
-240|21| ```tBodyGyroMag-mean()```|241|54| ```tBodyGyroMag-std()```
-253|22| ```tBodyGyroJerkMag-mean()```|254|55| ```tBodyGyroJerkMag-std()```
-266|23| ```fBodyAcc-mean()-X```|269|56| ```fBodyAcc-std()-X```
-267|24| ```fBodyAcc-mean()-Y```|270|57| ```fBodyAcc-std()-Y```
-268|25| ```fBodyAcc-mean()-Z```|271|58| ```fBodyAcc-std()-Z```
-345|26| ```fBodyAccJerk-mean()-X```|348|59| ```fBodyAccJerk-std()-X```
-346|27| ```fBodyAccJerk-mean()-Y```|349|60| ```fBodyAccJerk-std()-Y```
-347|28| ```fBodyAccJerk-mean()-Z```|350|61| ```fBodyAccJerk-std()-Z```
-424|29| ```fBodyGyro-mean()-X```|427|62| ```fBodyGyro-std()-X```
-425|30| ```fBodyGyro-mean()-Y```|428|63| ```fBodyGyro-std()-Y```
-426|31| ```fBodyGyro-mean()-Z```|429|64| ```fBodyGyro-std()-Z```
-503|32| ```fBodyAccMag-mean()```|504|65| ```fBodyAccMag-std()```
-516|33| ```fBodyBodyAccJerkMag-mean()```|517|66| ```fBodyBodyAccJerkMag-std()```
-529|34| ```fBodyBodyGyroMag-mean()```|530|67| ```fBodyBodyGyroMag-std()```
-542|35| ```fBodyBodyGyroJerkMag-mean()```|543|68| ```fBodyBodyGyroJerkMag-std()```
+1|3| ```tBodyAcc-mean()-X```|2|4| ```tBodyAcc-mean()-Y```
+3|5| ```tBodyAcc-mean()-Z```|41|6| ```tGravityAcc-mean()-X```
+42|7| ```tGravityAcc-mean()-Y```|43|8| ```tGravityAcc-mean()-Z```
+81|9| ```tBodyAccJerk-mean()-X```|82|10| ```tBodyAccJerk-mean()-Y```
+83|11| ```tBodyAccJerk-mean()-Z```|121|12| ```tBodyGyro-mean()-X```
+122|13| ```tBodyGyro-mean()-Y```|123|14| ```tBodyGyro-mean()-Z```
+161|15| ```tBodyGyroJerk-mean()-X```|162|16| ```tBodyGyroJerk-mean()-Y```
+163|17| ```tBodyGyroJerk-mean()-Z```|201|18| ```tBodyAccMag-mean()```
+214|19| ```tGravityAccMag-mean()```|227|20| ```tBodyAccJerkMag-mean()```
+240|21| ```tBodyGyroMag-mean()```|253|22| ```tBodyGyroJerkMag-mean()```
+266|23| ```fBodyAcc-mean()-X```|267|24| ```fBodyAcc-mean()-Y```
+268|25| ```fBodyAcc-mean()-Z```|345|26| ```fBodyAccJerk-mean()-X```
+346|27| ```fBodyAccJerk-mean()-Y```|347|28| ```fBodyAccJerk-mean()-Z```
+424|29| ```fBodyGyro-mean()-X```|425|30| ```fBodyGyro-mean()-Y```
+426|31| ```fBodyGyro-mean()-Z```|503|32| ```fBodyAccMag-mean()```
+516|33| ```fBodyBodyAccJerkMag-mean()```|529|34| ```fBodyBodyGyroMag-mean()```
+542|35| ```fBodyBodyGyroJerkMag-mean()```|4|36| ```tBodyAcc-std()-X```
+5|37| ```tBodyAcc-std()-Y```|6|38|```tBodyAcc-std()-Z```
+44|39| ```tGravityAcc-std()-X```|45|40| ```tGravityAcc-std()-Y```
+46|41| ```tGravityAcc-std()-Z```|84|42| ```tBodyAccJerk-std()-X```
+85|43| ```tBodyAccJerk-std()-Y```|86|44| ```tBodyAccJerk-std()-Z```
+124|45| ```tBodyGyro-std()-X```|125|46| ```tBodyGyro-std()-Y```
+126|47| ```tBodyGyro-std()-Z```|164|48| ```tBodyGyroJerk-std()-X```
+165|49| ```tBodyGyroJerk-std()-Y```|166|50| ```tBodyGyroJerk-std()-Z```
+202|51| ```tBodyAccMag-std()```|215|52| ```tGravityAccMag-std()```
+228|53| ```tBodyAccJerkMag-std()```|241|54| ```tBodyGyroMag-std()```
+254|55| ```tBodyGyroJerkMag-std()```|269|56| ```fBodyAcc-std()-X```
+270|57| ```fBodyAcc-std()-Y```|271|58| ```fBodyAcc-std()-Z```
+348|59| ```fBodyAccJerk-std()-X```|349|60| ```fBodyAccJerk-std()-Y```
+350|61| ```fBodyAccJerk-std()-Z```|427|62| ```fBodyGyro-std()-X```
+428|63| ```fBodyGyro-std()-Y```|429|64| ```fBodyGyro-std()-Z```
+504|65| ```fBodyAccMag-std()```|517|66| ```fBodyBodyAccJerkMag-std()```
+530|67| ```fBodyBodyGyroMag-std()```|543|68| ```fBodyBodyGyroJerkMag-std()```
 
 
 
