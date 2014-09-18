@@ -1,7 +1,7 @@
 Code Book
 ==========
 
-This code book explains the process to obtain the file ```aTidyDataSet.txt``` and describes the variables included in that file. The file contains 66 variables and 180 observacions. Every observation is the mean of all the observations on a certain subject performing a certain activity for certain variables.
+This code book explains the process to obtain the file ```aTidyDataSet.txt``` and describes the variables included in that file. The file contains 68 variables and 180 observacions. Every observation is the mean of all the observations on a certain subject performing a certain activity for certain variables.
 ## The original source
 The original data comes from a study which can be found at this page http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones.
 
@@ -35,14 +35,15 @@ Besides, the database has 1 file with the 6 performed activities' names, ```acti
 8. ```features.txt``` - 561 rows and 1 column
 
 #### The procedure
-The analysis will be performed in R. The code is in the file ```run_analysis.R``` and the function's name is ```firstTidyDataSet()```
-After reading all the files with ```read.table()```, we merge the two "X" datasets obtaining a dataset with 561 variables and 10299 observations using the ```rbind()``` function. We also merge the two "subject" datasets obtaining a dataset with one column and 10299 rows and the two "y" datasets with the same result.
+The analysis will be performed in R. The code is in the file ```run_analysis.R``` and the function's name is ```firstTidyDataSet()```. There are a lot of explanatory comments in the ```run_analysis.R``` file that complement this CodeBook.
+
+After reading all the files with ```read.table()```, we merge the two "X" datasets using the ```rbind()``` function and obtain a dataset with 561 variables and 10299 observations. We also merge the two "subject" datasets obtaining a dataset with one column and 10299 rows and the two "y" datasets with the same result.
 For the moment, we keep them separated, as we need to name the variables, select only a subset of them and replace the activity codes with the activity names, and that will be done easier this way.
 * For naming the variables, we use the names we found in features.txt and the ```names()``` function.
 * Following the assignment, we have to select only the variables with the mean and standard deviation values. There are 66 variables that satisfy this condition.
 This is done using the dplyr package and the ```select()``` function with ```contains()```.
 * The replacement of the activity codes by the activity names is done using the ```mutate()``` function of the dplyr package and the ```factor()``` function.
-* Finally, we put the subject dataset, the y dataset and the X dataset together using ```data.frame()```. We obtain a dataset with one column containing the subjects' identification number, one column containing the activity names, 33 columns with mean values and 33 columns with standard deviation values, that is, a dataset with 68 variables and 10299 observations.
+* Finally, we put the subject dataset, the y dataset and the X dataset together using ```data.frame()```. We obtain a dataset with 68 columns: a column containing the subjects' identification number, a column containing the activity names, 33 columns with mean values and 33 columns with standard deviation values, that is, a dataset with 68 variables and 10299 observations.
 
 ### The second and final tidy dataset
 The code for this part is also in the file ```run_analysis.R``` and the function's name is ```secondTidyDataSet()```.
