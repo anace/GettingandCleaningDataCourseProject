@@ -8,18 +8,18 @@ In this project we create two tidy datasets from a number of data files. We assu
     source("run_analysis.R")
     firstdataset <- firstTidyDataSet()
     ```	
-This dataset contains 10299 rows and 68 columns, i.e. 33 means, 33 stds, a subject column and an activity column.
+This dataset contains 10299 rows and 68 columns, i.e. 33 columns with mean values, 33 columns with standard deviation values, a column with the subjects identification number and a column with the name of the activity performed.
 
-2. The second data set contains the means of the 33 means and the 33 stds by subject and activity and it is created by running
+2. The second dataset contains the averages of the 33 mean values and the 33 standard deviation values by subject and activity and it is created by running
 
    ```
     source("run_analysis.R")
     tidyDataSet <- secondTidyDataSet()
     ```
 	
-This dataset contains 180 rows and 66 columns.
+This dataset contains 180 rows and 68 columns.
 	
-The secondTidyDataSet() function also creates a text file with the data called "aTidyDataSet.txt". To read this file in R you can run
+The ```secondTidyDataSet()``` function also creates a text file with the data called ```aTidyDataSet.txt```. The text file will be saved in the working directory. To read this file in R you can run
 	
 	newdataset<-read.table("aTidyDataSet.txt", colClasses="character", header=TRUE)
 	
