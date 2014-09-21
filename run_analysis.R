@@ -7,8 +7,9 @@
 ## 4. Appropriately labels the data set with descriptive variable names. 
 ## 5. From the data set in step 4, creates a second, independent tidy data set with the average of each
 ##    variable for each activity and each subject.
-## The steps will be done in this order: 1a, 4, 2, 3, 1b and finally 5. It seems more logical first to give the variables
-## descriptive names and then select the variables we need using these descriptive variable names.
+## The steps will be done in this order: 1a, 4, 2, 3, 1b and finally 5. It seems more logical first to
+## give the variables descriptive names and then select the variables we need using these descriptive
+## variable names.
 
 firstTidyDataSet <- function(){
 	library(dplyr)
