@@ -19,12 +19,12 @@ This dataset contains 10299 rows and 68 columns, i.e. 33 columns with mean value
     tidyDataSet <- secondTidyDataSet()
     ```
 	
-This dataset contains 180 rows and 68 columns.
+	This dataset contains 180 rows and 68 columns.
 
-The ```secondTidyDataSet()``` function starts with ```data ```, a dataset created by the ```firstTidyDataSet()``` function, splits the data by subject and activity using the ```split()``` function and calculates the averages of all the variables for each subject/activity group by means of the ```sapply()``` loop function.
+	The ```secondTidyDataSet()``` function starts with ```data ```, a dataset created by the ```firstTidyDataSet()``` function, splits the data by subject and activity using the ```split()``` function and calculates the averages of all the variables for each subject/activity group by means of the ```sapply()``` loop function.
 
 	The ```secondTidyDataSet()``` function also creates a text file with the data called ```aTidyDataSet.txt``` using the ```write.table()``` function. The text file will be saved in the working directory. To read this file in R you can run
 	
-	newdataset<-read.table("aTidyDataSet.txt", colClasses="character", header=TRUE)
+	```newdataset<-read.table("aTidyDataSet.txt", colClasses="character", header=TRUE)```
 	
 More information is available in the CodeBook and in the comments of ```run_analysis.R```
